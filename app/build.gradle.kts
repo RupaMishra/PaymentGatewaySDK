@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    `maven-publish`
 }
 
 android {
@@ -67,3 +68,20 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 }
+afterEvaluate {
+    publishing {
+        publications {
+            create<MavenPublication>("maven") {
+                // Make sure the component name matches your build type
+                from(components.findByName("release"))
+                groupId = "com.github.RupaMishra"
+                artifactId = "PaymentGateway"
+                version = "1.0.1"
+            }
+        }
+        repositories {
+            mavenLocal()
+        }
+    }
+}
+
