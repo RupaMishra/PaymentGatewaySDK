@@ -21,4 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Payment Gateway"
 include(":app")
- 
+include(":PaymentGateway")
