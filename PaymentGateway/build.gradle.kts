@@ -28,7 +28,22 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
 }
-
+afterEvaluate {
+    publishing {
+        publications {
+            create<MavenPublication>("maven") {
+                // Make sure the component name matches your build type
+                from(components.findByName("release"))
+                groupId = "com.github.RupaMishra"
+                artifactId = "PaymentGateway"
+                version = "1.0.8"
+            }
+        }
+        repositories {
+            mavenLocal()
+        }
+    }
+}
 dependencies {
 
     implementation(libs.androidx.appcompat)

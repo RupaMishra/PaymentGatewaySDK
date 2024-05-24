@@ -7,7 +7,6 @@ plugins {
 android {
     namespace = "com.example.paymentgateway"
     compileSdk = 34
-
     defaultConfig {
         applicationId = "com.example.paymentgateway"
         minSdk = 24
@@ -20,7 +19,6 @@ android {
             useSupportLibrary = true
         }
     }
-
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -68,20 +66,20 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 }
-afterEvaluate {
-    publishing {
-        publications {
-            create<MavenPublication>("maven") {
-                // Make sure the component name matches your build type
-                from(components.findByName("release"))
-                groupId = "com.github.RupaMishra"
-                artifactId = "PaymentGateway"
-                version = "1.0.8"
-            }
-        }
-        repositories {
-            mavenLocal()
-        }
-    }
-}
+//afterEvaluate {
+//    publishing {
+//        publications {
+//            create<MavenPublication>("maven") {
+//                // Make sure the component name matches your build type
+//                from(components.findByName("release"))
+//                groupId = "com.github.RupaMishra"
+//                artifactId = "PaymentGateway"
+//                version = "1.0.8"
+//            }
+//        }
+//        repositories {
+//            mavenLocal()
+//        }
+//    }
+//}
 
