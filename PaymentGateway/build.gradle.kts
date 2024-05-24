@@ -28,22 +28,22 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
 }
-afterEvaluate {
-    publishing {
-        publications {
-            create<MavenPublication>("maven") {
-                // Make sure the component name matches your build type
-                from(components.findByName("release"))
-                groupId = "com.github.RupaMishra"
-                artifactId = "PaymentGateway"
-                version = "2.0.2"
-            }
-        }
-        repositories {
-            mavenLocal()
-        }
-    }
-}
+//afterEvaluate {
+//    publishing {
+//        publications {
+//            create<MavenPublication>("maven") {
+//                // Make sure the component name matches your build type
+//                from(components.findByName("release"))
+//                groupId = "com.github.RupaMishra"
+//                artifactId = "PaymentGateway"
+//                version = "2.0.2"
+//            }
+//        }
+//        repositories {
+//            mavenLocal()
+//        }
+//    }
+//}
 dependencies {
 
     implementation(libs.androidx.appcompat)
