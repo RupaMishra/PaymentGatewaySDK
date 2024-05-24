@@ -36,7 +36,7 @@ afterEvaluate {
                 from(components.findByName("release"))
                 groupId = "com.github.RupaMishra"
                 artifactId = "PaymentGateway"
-                version = "1.0.8"
+                version = "2.0.1"
             }
         }
         repositories {
