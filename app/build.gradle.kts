@@ -58,6 +58,7 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation(project(":PaymentGateway"))
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -66,20 +67,20 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 }
-//afterEvaluate {
-//    publishing {
-//        publications {
-//            create<MavenPublication>("maven") {
-//                // Make sure the component name matches your build type
-//                from(components.findByName("release"))
-//                groupId = "com.github.RupaMishra"
-//                artifactId = "PaymentGateway"
-//                version = "1.0.8"
-//            }
-//        }
-//        repositories {
-//            mavenLocal()
-//        }
-//    }
-//}
+afterEvaluate {
+    publishing {
+        publications {
+            create<MavenPublication>("maven") {
+                // Make sure the component name matches your build type
+                from(components.findByName("release"))
+                groupId = "com.github.RupaMishra"
+                artifactId = "PaymentGateway"
+                version = "2.0.2"
+            }
+        }
+        repositories {
+            mavenLocal()
+        }
+    }
+}
 
